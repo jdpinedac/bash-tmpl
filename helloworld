@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Project: bash-tmpl
+# Filename: helloworld
+# Description: Simple hello world in bash
+# Developed by: Juan Pineda <juan.david.pineda@gmail.com>
+# Date: Oct6, 2021.
+# Globals:
+# Arguments:
+# Outputs:
+# Returns: 
+
+function err {
+  echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $*" >&2
+}
+
+function print_hello {
+  echo "Hello World!"
+}
+
+function main {
+  print_hello
+}
+
+# Main
+[ $# != 0 ] \
+  && { err "ERROR. Usage: $0"; exit 1; }
+
+main
+exit 0
